@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager - wafflynutria.com</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <h1>🔐 File Manager Login</h1>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <div id="loginError" class="login-error"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="mainApp" class="container" style="display: none;">
+        <header>
+            <h1>📁 File Manager</h1>
+            <div class="path-display">C:\Users\levis\OneDrive\Desktop\wafflynutria.com</div>
+            <div class="header-actions">
+                <button id="createFolderBtn" class="btn btn-primary">+ New Folder</button>
+                <button id="uploadBtn" class="btn btn-primary">+ Upload File</button>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+                <input type="file" id="fileInput" style="display: none;" multiple>
+            </div>
+        </header>
+
+        <div class="breadcrumb">
+            <span id="breadcrumbPath">/ Home</span>
+        </div>
+
+        <div class="file-grid" id="fileGrid">
+            <div class="loading">Loading files...</div>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div id="contextMenu" class="context-menu">
+        <div class="context-item" id="viewDetailsItem">ℹ️ Details</div>
+        <div class="context-item" id="playVideoItem">▶️ Play Video</div>
+        <div class="context-item" id="renameItem">✏️ Rename</div>
+        <div class="context-item" id="deleteItem">🗑️ Delete</div>
+        <div class="context-item" id="downloadItem">⬇️ Download</div>
+    </div>
+
+    <!-- Details Modal -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>File Details</h2>
+            <div id="detailsContent"></div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-video">&times;</span>
+            <h2 id="videoTitle">Video Player</h2>
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    
+      <div class="gradient-bg">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="gradients-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div class="interactive"></div>
+    </div>
+  </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+
+    <script src="client.js"></script>
+</body>
+</html>
